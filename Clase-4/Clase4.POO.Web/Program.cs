@@ -1,11 +1,11 @@
-using Clase3.MVC.Servicio;
+using Clase4.POO.Entidades;
+using Clase4.POO.Logica;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IRegaloServicio, RegaloServicio>();
-builder.Services.AddScoped<IAutomovilServicio, AutomovilServicio>();
+builder.Services.AddSingleton<IEquiposLogica, EquiposLogica>();
 
 var app = builder.Build();
 
@@ -26,6 +26,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Equipos}/{action=Listar}/{id?}");
 
 app.Run();
