@@ -1,0 +1,27 @@
+﻿@model List<Clase3.MVC.Entidades.Auto> 
+@{
+
+}
+
+<h1>Concesionaria</h1>
+
+<Table class="table">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var auto in Model)
+        {
+            <tr>
+                <td>@auto.Marca</td>
+                <td>@auto.Modelo</td>
+                <td><img src="@auto.Foto" alt="Imagen de @auto.Modelo" style="width: 100px; height: 100px;" /></td>
+            </tr>
+        }
+    </tbody>
+</Table>

@@ -22,6 +22,7 @@ namespace Clase3.MVC.WebApp.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Agregar(string descripcion, decimal precio)
         {
